@@ -1,24 +1,38 @@
 <template lang="pug">
-#HeaderBar.p-2.lg_p-4.lg_px-8.border-b.border-seagreen.fixed.w-full.bg-white-50.ani-sit
-  .container
-    .flex.justify-between.items-center
-      .flex.items-center
-        .logo.w-16.mr-3
-          include ../../static/logo.svg
-        .flex.flex-col.items-center
-          .font-slab.text-lg.lg_text-2xl.uppercase.text-allports mindul family solutions
-          .font-merri.text-seagreen.italic.lg_text-xl
-            span empower
-            i.mdi.mdi-circle-medium
-            span connect
-            i.mdi.mdi-circle-medium
-            span support
-      .flex.hidden.lg_flex
-        span(v-for="option, index in nav")
-          nuxt-link.font-slab.uppercase.text-allports(:to="option.route",:title="option.detail") {{ option.label }}
-          i.px-2.mdi.mdi-circle-medium.text-allports(v-if="index != (Object.keys(nav).length-1)")
-      .menu.lg_hidden.select-none.hl-tran
-        #lottieMenu.w-12.h-12.cursor-pointer.overflow-hidden(ref="lottieMenu",@click="toggle")
+#HeaderBar.relative
+  .border-b.border-seagreen.fixed.w-full.ani-sit.z-20(:class="{'bg-white': is_open, 'bg-white-50': !is_open}")
+    .container
+      .flex.justify-between.items-center.p-2.lg_p-4.lg_px-8
+        .flex.items-center
+          .logo.w-16.mr-3.ani-sit.ani-d-1
+            include ../../static/logo.svg
+          .flex.flex-col.items-center
+            .font-slab.text-lg.lg_text-2xl.uppercase.text-allports.ani-sit.ani-d-2 mindul family solutions
+            .font-merri.text-seagreen.italic.lg_text-xl.ani-sit.ani-d-3
+              span empower
+              i.mdi.mdi-circle-medium
+              span connect
+              i.mdi.mdi-circle-medium
+              span support
+        .flex.hidden.lg_flex
+          .inline-block.ani-sil(v-for="option, index in nav",:class="`ani-d-${index+4}`")
+            nuxt-link.font-slab.uppercase.text-allports(
+              :to="option.route",
+              :title="option.detail",
+              ) {{ option.label }}
+            i.px-2.mdi.mdi-circle-medium.text-allports(v-if="index != (Object.keys(nav).length-1)")
+        .menu.lg_hidden.select-none.hl-tran.ani-sit.ani-d-4
+          #lottieMenu.w-12.h-12.cursor-pointer.overflow-hidden(ref="lottieMenu",@click="toggle")
+
+  transition(name="fade-in-left")
+    .mobile_menu.bg-white.fixed.h-screen.pt-24.w-screen.z-10(v-if="is_open")
+      .flex.flex-col.text-4xl.text-right.mt-8
+        nuxt-link.font-slab.uppercase.text-allports.p-4.ani-sil(
+          v-for="option, index in nav",
+          :class="`ani-d-${index+3}`",
+          :key="option.route",
+          :to="option.route",
+          :title="option.detail") {{ option.label }}
 </template>
 
 <script>

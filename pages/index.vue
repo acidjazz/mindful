@@ -3,7 +3,39 @@
   .hero.bg-beach.h-screen
     .container
       .flex.h-screen.items-center
-        .w-256.mx-auto.text-4xl.text-center.text-white.text-shadow(v-in-vp).vp-y {{ copy.opener }}
+        .lg_w-256.p-2.mx-auto.text-4xl.text-center.text-white.text-shadow.z-0(v-in-vp).vp-y {{ copy.opener }}
+  .below
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
 </template>
 
 <script>
