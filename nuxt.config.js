@@ -52,7 +52,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: pkg.config.colors.yeloworange },
+  loading: { color: pkg.config.colors.yelloworange },
   /*
   ** Global CSS
   */
