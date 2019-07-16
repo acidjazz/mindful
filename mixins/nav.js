@@ -10,7 +10,7 @@ export default {
       nav: [
         {
           label: 'about',
-          detail: 'Meet your family coach',
+          detail: 'Meet your Family Coach',
           route: '/about',
         },
         {
@@ -20,12 +20,12 @@ export default {
         },
         {
           label: 'testimonials',
-          detail: 'Client endorsements of Alexis Kraut',
+          detail: 'Client Endorsements of Alexis Kraut',
           route: '/testimonials',
         },
         {
           label: 'FAQ',
-          detail: 'Your most common questions answered',
+          detail: 'Your Most Common Questions Answered',
           route: '/faq',
         },
       ]
