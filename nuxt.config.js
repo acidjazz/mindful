@@ -43,7 +43,11 @@ export default {
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: pkg.config.colors.seagreen },
       { rel: 'shortcut icon', href: '/favicon.ico' },
-    ]
+    ],
+    script: [
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie.min.js' },
+    ],
+
   },
   /*
   ** Customize the progress-bar color
@@ -59,6 +63,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/viewport.client.js',
   ],
   /*
   ** Nuxt.js modules

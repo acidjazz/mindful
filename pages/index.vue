@@ -1,8 +1,9 @@
 <template lang="pug">
-.page.page-home.bg-beach.h-screen
-  .container
-    .flex.pt-32.h-screen
-      .w-256.mx-auto.text-4xl.text-center {{ copy.opener }}
+.page.page-home
+  .hero.bg-beach.h-screen
+    .container
+      .flex.h-screen.items-center
+        .w-256.mx-auto.text-4xl.text-center.text-white.text-shadow(v-in-vp).vp-y {{ copy.opener }}
 </template>
 
 <script>

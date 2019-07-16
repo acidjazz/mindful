@@ -10,14 +10,22 @@ json('../../package.json')
 .bg-beach
   background url(/beach.jpg)
   background-size cover
+  background-position 50% 100%
 
 .bg-white-50
-  background-color rgba(config-colors-white, 0.5)
+  background-color rgba(config-colors-white, 0.8)
+
+.text-shadow
+  text-shadow 0px 0px 3px config-colors-allports
 
 html, body
   @apply font-merri
-
 a
   text-decoration none
+
+.lottieMenu
+  transform scale(10) !important
+  path
+    fill config-colors-allports !important
 
 /* purgecss end ignore */
