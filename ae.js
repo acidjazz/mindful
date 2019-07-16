@@ -17,6 +17,7 @@ var defaults = {
   environments: {},
 }
 
+const fs = require('fs')
 const ora = require('ora')
 const spinner = ora('Loading æonian').start()
 const AWS = require('aws-sdk')
@@ -78,9 +79,8 @@ exports.deploy = (environment) => {
     if (buckets.indexOf(bucket) !== -1) {
       this.next('Bucket already found, emptying')
       this.info()
-      this.emptyBucket(bucket, () => {
-        this.process(bucket, domain, environment)
-      })
+      this.emptyBucket(bucket, '/')
+      this.process(bucket, domain, environment)
     } else {
       this.createBucket(bucket, () => {
         this.process(bucket, domain, environment)
