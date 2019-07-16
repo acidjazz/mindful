@@ -5,9 +5,9 @@
  *
  * Distributed under terms of the APACHE license.
  */
-require('./ae').config({
+require('aeonian').config({
   bucket: {
-    localDir: './dist/',
+    localDir: 'dist/',
     prefix: 'mnd-',
     region: 'us-east-1',
   },
