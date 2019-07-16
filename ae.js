@@ -18,6 +18,7 @@ var defaults = {
 }
 
 const fs = require('fs')
+const path = require('path')
 const ora = require('ora')
 const spinner = ora('Loading æonian').start()
 const AWS = require('aws-sdk')
