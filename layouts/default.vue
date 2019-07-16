@@ -1,8 +1,12 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  #mindful
+    HeaderBar
+    nuxt
 </template>
 
-<style>
-</style>
+<script>
+import HeaderBar from '@/components/header/HeaderBar'
+export default {
+  components: { HeaderBar },
+}
+</script>

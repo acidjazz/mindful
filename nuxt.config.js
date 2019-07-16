@@ -53,6 +53,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/stylus/main.styl',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -63,6 +64,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/pwa', { manifest: false }],
   ],
 
   devModules: [
