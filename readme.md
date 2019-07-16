@@ -2,7 +2,7 @@
   <img src="https://github.com/acidjazz/mindful/blob/master/static/mindful.jpg" alt="mindful family solutions"/>
 </p>
 
-> We Are Apartments
+> mindful family solutions
 
 [![GitHub issues](https://img.shields.io/github/issues/acidjazz/mindful.svg)](https://github.com/acidjazz/mindful/issues)
 [![CircleCI](https://img.shields.io/circleci/project/github/acidjazz/mindful.svg)](https://circleci.com/gh/acidjazz/mindful/)
