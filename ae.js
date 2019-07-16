@@ -47,7 +47,7 @@ exports.config = (cfg) => {
   if (cfg.environments) {
     Object.assign(defaults.environments, cfg.environments);
   }
-    
+
   if (defaults.bucket.prefix === null) {
     this.error('You need to specify a bucket prefix; bucket: { prefix: \'myproj-\' }')
   }
@@ -140,11 +140,30 @@ exports.destroyBucket = (bucket, complete) => {
 }
 
 exports.emptyBucket = (bucket, complete) => {
+
   this.next('Emptying bucket: ' + bucket)
-  var deleter = client.deleteDir({Bucket: bucket})
-  deleter.on('end', () => {
-    this.succeed()
-    complete()
+
+  var params = {
+    Bucket: bucket,
+  }
+
+  s3.listObjects({Bucket: bucket}, function (err, data) {
+    if (err)  return complete(err)
+    if (data.contents.length === 0 ) {
+      this.succeed()
+      complete()
+    }
+    params = {Bucket: bucketName}
+    params.Delete = {Objects: []}
+    data.Contents.forEach( (content) => params.Delete.Objects.push({Key: content.Key}) )
+    s3.deleteObjecst(params, (err, data) => {
+      if (er) return complete(err)
+      if (data.Contents.length == 1000) exports.emptyBucket(bucketName, complete)
+      else {
+        complete()
+        this.succeed()
+      }
+    })
   })
 }
 
