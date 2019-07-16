@@ -10,28 +10,23 @@ export default {
       nav: [
         {
           label: 'about',
-          detail: 'about your coach',
+          detail: 'Meet your family coach',
           route: '/about',
         },
         {
           label: 'services',
-          detail: 'our services',
+          detail: 'Family Coaching and Consulting',
           route: '/services',
         },
         {
           label: 'testimonials',
-          detail: 'our testimonials',
+          detail: 'Client endorsements of Alexis Kraut',
           route: '/testimonials',
         },
         {
           label: 'FAQ',
-          detail: 'frequently asked questions',
+          detail: 'Your most common questions answered',
           route: '/faq',
-        },
-        {
-          label: 'Client Services',
-          detail: 'detailed for client services',
-          route: '/services',
         },
       ]
     }
