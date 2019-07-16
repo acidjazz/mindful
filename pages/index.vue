@@ -1,21 +1,19 @@
 <template lang="pug">
-.flex.items-center.justify-center.flex-col.h-screen
-  .svg.w-32
-    include ../static/logo.svg
-  .font-slab.text-2xl.uppercase.text-allports mindful family solutions
-  .font-merri.text-seagreen.italic.text-xl
-    span empower
-    i.mdi.mdi-circle-medium
-    span connect
-    i.mdi.mdi-circle-medium
-    span support
-
+.page.page-home.bg-beach.h-screen
+  .container
+    .flex.pt-32.h-screen
+      .w-256.mx-auto.text-4xl.text-center {{ copy.opener }}
 </template>
 
 <script>
 
+import copy from '@/mixins/copy'
+
 export default {
-  components: {
+  data () {
+    return {
+      copy: copy.home
+    }
   }
 }
 </script>

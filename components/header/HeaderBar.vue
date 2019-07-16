@@ -1,5 +1,5 @@
 <template lang="pug">
-#HeaderBar.py-4.px-8.border-b.border-seagreen.fixed.w-full
+#HeaderBar.py-4.px-8.border-b.border-seagreen.fixed.w-full.bg-white-50
   .container
     .flex.justify-between.items-center
       .flex.items-center
