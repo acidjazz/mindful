@@ -12,7 +12,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.config.description },
       { name: 'msapplication-config', content: '/browserconfig.xml' },
-      { name: 'theme-color', content: pkg.config.colors.seagreen },
+      { name: 'theme-color', content: pkg.config.colors.allports },
 
       { 'http-equiv': 'X-UA-Compatible', content: 'IE: Edge, chrome: 1' },
       { 'http-equiv': 'Content-Type', content: 'text/html; charset: UTF-8' },
@@ -41,7 +41,7 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: pkg.config.colors.seagreen },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: pkg.config.colors.allports },
       { rel: 'shortcut icon', href: '/favicon.ico' },
     ],
     script: [
