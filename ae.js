@@ -132,39 +132,34 @@ exports.listBuckets = (complete) => {
 }
 
 exports.destroyBucket = (bucket, complete) => {
-  this.emptyBucket(bucket, () => {
-    this.deleteBucket(bucket, () => {
+  this.emptyBucket(bucket, '/')
+  this.deleteBucket(bucket, () => {
       complete()
-    })
   })
 }
 
-exports.emptyBucket = (bucket, complete) => {
+exports.emptyBucket = async function (bucket, dir) {
+    const listParams = {
+        Bucket: bucket,
+        Prefix: dir
+    };
 
-  this.next('Emptying bucket: ' + bucket)
+    const listedObjects = await s3.listObjectsV2(listParams).promise();
 
-  var params = {
-    Bucket: bucket,
-  }
+    if (listedObjects.Contents.length === 0) return;
 
-  s3.listObjects({Bucket: bucket}, function (err, data) {
-    if (err)  return complete(err)
-    if (data.contents.length === 0 ) {
-      this.succeed()
-      complete()
-    }
-    params = {Bucket: bucketName}
-    params.Delete = {Objects: []}
-    data.Contents.forEach( (content) => params.Delete.Objects.push({Key: content.Key}) )
-    s3.deleteObjecst(params, (err, data) => {
-      if (er) return complete(err)
-      if (data.Contents.length == 1000) exports.emptyBucket(bucketName, complete)
-      else {
-        complete()
-        this.succeed()
-      }
-    })
-  })
+    const deleteParams = {
+        Bucket: bucket,
+        Delete: { Objects: [] }
+    };
+
+    listedObjects.Contents.forEach(({ Key }) => {
+        deleteParams.Delete.Objects.push({ Key });
+    });
+
+    await s3.deleteObjects(deleteParams).promise();
+
+    if (listedObjects.IsTruncated) await exports.emptyBucket(bucket, dir);
 }
 
 exports.deleteBucket = (bucket, complete) => {
@@ -191,7 +186,41 @@ exports.createBucket = (bucket, complete) => {
   })
 }
 
-exports.uploadToBucket = (bucket, complete) => {
+exports.uploadToBucket = (bucketName, complete) => {
+
+  function walkSync(currentDirPath, callback) {
+      fs.readdirSync(currentDirPath).forEach(function (name) {
+          var filePath = path.join(currentDirPath, name)
+          var stat = fs.statSync(filePath)
+          if (stat.isFile()) {
+              callback(filePath, stat)
+          } else if (stat.isDirectory()) {
+              walkSync(filePath, callback)
+          }
+      });
+  }
+
+  walkSync(defaults.bucket.localDir, function(filePath, stat) {
+      let bucketPath = filePath.substring(defaults.bucket.localDir.length+1)
+      let params = {Bucket: bucketName, Key: bucketPath, Body: fs.readFileSync(filePath) }
+      s3.putObject(params, function(err, data) {
+          if (err) {
+              this.error('unable to sync:', err.stack)
+          } else {
+              // console.log('Successfully uploaded '+ bucketPath +' to ' + bucketName)
+          }
+      });
+
+  });
+
+  this.succeed()
+  complete()
+
+}
+
+
+
+  /*
   this.next('00.00% Uploading to bucket: ' + bucket)
   let params = {
     localDir: defaults.bucket.localDir,
@@ -218,8 +247,7 @@ exports.uploadToBucket = (bucket, complete) => {
     this.succeed()
     complete()
   })
-
-}
+  */
 
 exports.makeBucketWebsite = (bucket, complete) => {
   this.next('Websiteing bucket: ' + bucket)
