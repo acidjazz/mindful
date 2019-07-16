@@ -17,7 +17,7 @@
         span(v-for="option, index in nav")
           nuxt-link.font-slab.uppercase.text-allports(:to="option.route",:title="option.detail") {{ option.label }}
           i.px-2.mdi.mdi-circle-medium.text-allports(v-if="index != (Object.keys(nav).length-1)")
-      .menu.lg_hidden
+      .menu.lg_hidden.select-none.hl-tran
         #lottieMenu.w-12.h-12.cursor-pointer.overflow-hidden(ref="lottieMenu",@click="toggle")
 </template>
 
