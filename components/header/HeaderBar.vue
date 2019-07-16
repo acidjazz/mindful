@@ -21,7 +21,7 @@
               :title="option.detail",
               ) {{ option.label }}
             i.px-2.mdi.mdi-circle-medium.text-allports(v-if="index != (Object.keys(nav).length-1)")
-        .menu.lg_hidden.select-none.hl-tran.ani-sit.ani-d-4
+        .menu.lg_hidden.select-none.hl-tran.ani-zi.ani-d-6
           #lottieMenu.w-12.h-12.cursor-pointer.overflow-hidden(ref="lottieMenu",@click="toggle")
 
   transition(name="fade-in-left")
@@ -78,11 +78,9 @@ export default {
       return this.is_open = true
     },
     open () {
-      console.log('opening menu')
       this.anim.playSegments([30, 40], true)
     },
     close () {
-      console.log('closing menu')
       this.anim.playSegments([90, 110], true)
     },
   },
