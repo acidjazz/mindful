@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/acidjazz/mindful/blob/master/static/mindful.jpg" width="300" alt="mindful family solutions"/>
+  <img src="https://github.com/acidjazz/mindful/blob/master/static/mindful.jpg" alt="mindful family solutions"/>
 </p>
 
 > We Are Apartments
