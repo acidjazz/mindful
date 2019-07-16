@@ -1,4 +1,5 @@
 <template>
+  <div style="text-align: center; padding-top: 50vh;"> under construction </div>
 </template>
 
 <script>
