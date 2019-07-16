@@ -1,0 +1,36 @@
+{
+  "name": "mindful",
+  "version": "1.0.0",
+  "description": "mindful family solutions",
+  "license": "Apache-1.0",
+  "author": "acidjazz",
+  "private": false,
+  "config": {
+    "title": "mindful family solutions",
+    "description": "powering families to create positive, lasting changes",
+    "url": "https://mindfulfamily.care",
+    "image": "/mindful.jpg",
+    "colors": {
+      "black": "#000000",
+      "white": "#FFFFFF",
+      "allports": "#196775",
+      "seagreen": "#45b973",
+      "yelloworange": "#fdaf3f"
+    }
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@mdi/font": "^3.8.95",
+    "@nuxtjs/tailwindcss": "^1.1.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
