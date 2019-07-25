@@ -1,9 +1,9 @@
 <template lang="pug">
 #HeaderBar.relative
-  .border-b.border-seagreen.fixed.w-full.ani-sit.z-20(:class="{'bg-white': is_open, 'bg-white-50': !is_open}")
+  .border-b.border-seagreen.fixed.w-full.ani-sit.z-20(:class="{'bg-white': is_open, 'bg-white': !is_open}")
     .container
       .flex.justify-between.items-center.p-2.lg_p-4.lg_px-8
-        .flex.items-center
+        nuxt-link.flex.items-center(to="/")
           .logo.w-16.mr-3.ani-sit.ani-d-1
             include ../../static/logo.svg
           .flex.flex-col.items-center
@@ -30,6 +30,7 @@
         nuxt-link.font-slab.uppercase.text-allports.p-4.ani-sil(
           v-for="option, index in nav",
           :class="`ani-d-${index+3}`",
+          @click.native="is_open = false",
           :key="option.route",
           :to="option.route",
           :title="option.detail") {{ option.label }}

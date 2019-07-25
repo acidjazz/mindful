@@ -16,8 +16,8 @@ module.exports = {
       merri: ['Merriweather', 'serif'],
       slab: ['Roboto Slab', 'serif'],
     },
-    colors: pkg.config.colors,
     extend: {
+      colors: pkg.config.colors,
       width: {
       '128': '32rem',
       '192': '48rem',
