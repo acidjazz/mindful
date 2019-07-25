@@ -6,7 +6,7 @@
         .lg_w-256.p-2.lg_pb-10.mx-auto.text-4xl.text-center.text-white.text-shadow.z-0(v-in-vp).vp-y {{ copy.opener }}
   .below.my-16
     .container
-      .flex.items-around.p-4.lg_p-8.flex-col.lg_flex_row
+      .flex.items-around.p-4.lg_p-8.flex-col.lg_flex-row
         .lg_w-1_2.flex.flex-col.items-end.justify-around
           .lg_mr-10(v-in-vp).vp-r.mb-8.lg_mb-0
             .text-2xl.font-bold.mb-2.text-seagreen Why Family Coaching?
