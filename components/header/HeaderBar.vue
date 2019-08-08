@@ -29,8 +29,8 @@
       .flex.flex-col.text-4xl.text-right.mt-8
         nuxt-link.font-slab.uppercase.text-allports.p-4.ani-sil(
           v-for="option, index in nav",
-          :class="`ani-d-${index+14}`",
-          @click.native="menu.is_open = false",
+          :class="`ani-d-${index+4}`",
+          @click.native="toggle",
           :key="option.route",
           :to="option.route",
           :title="option.detail") {{ option.label }}
@@ -103,10 +103,10 @@ export default {
       return this.menu.is_open = true
     },
     open () {
-      this.menu.anim.playSegments([30, 40], true)
+      this.menu.anim.playSegments([0, 10], true)
     },
     close () {
-      this.menu.anim.playSegments([90, 110], true)
+      this.menu.anim.playSegments([10, 0], true)
     },
   },
 }
