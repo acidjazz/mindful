@@ -3,7 +3,7 @@
   .hero.bg-beach.h-screen
     .container
       .flex.h-screen.lg_items-end.items-center
-        .lg_w-256.p-2.lg_pb-10.mx-auto.text-4xl.text-center.text-white.text-shadow.z-0(v-in-vp).vp-y {{ copy.opener }}
+        .lg_w-256.p-2.lg_pb-10.mx-auto.text-2xl.lg_text-4xl.text-center.text-white.z-0(v-in-vp).vp-y {{ copy.opener }}
   .below.my-16
     .container
       .flex.items-around.p-4.lg_p-16.flex-col.lg_flex-row
