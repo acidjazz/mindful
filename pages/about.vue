@@ -7,19 +7,22 @@
     .container
       .flex.flex-col.lg_flex-row.lg_-px-12.my-8
         .lg_w-1_2.lg_p-12.flex.items-center
-          img(src="/alexis.jpg")(v-in-vp).vp-y
+          img(src="/alexis.jpg",v-in-vp).vp-y
         .lg_w-1_2.lg_p-12.flex.flex-col.justify-around.text-lg
           .my-8
+            .flex.mb-4(v-in-vp).vp-y
+              .bg-seagreen.w-1.mr-4
+              .text-2xl.font-bold.mb-2.text-seagreen Alexis Kraut
             p.mb-8(v-in-vp).vp-y A graduate with her Master of Social Work, Alexis now has over ten years of experience working with families. Alexis has explored, analyzed and created effective parenting techniques for families based on what she has experienced as s a nanny, child behavior specialist, social worker, and mental health therapist. Alexis believes that the core components of strong families lie in empowerment, personal connections and internal support systems. A foundational belief of her coaching philosophy is that these principles can all be derived from the concept of mindfulness, where one can learn to become more aware of the present moment by being in touch with and acknowledging thoughts, feelings [physical and emotional] as well as the surrounding environment.
             p(v-in-vp).vp-y Alexis recently departed from being a youth and family mental health therapist to focus solely on coaching. The majority of her work has been processing trauma with kiddos and their families, teaching regulation of emotions, and increasing positive behaviors and parenting techniques in families.
 
-      .flex.flex-col.lg_flex-row.lg_-px-12.my-8
+      .flex.flex-col.lg_flex-row-reverse.lg_-px-12.my-8
         .lg_w-1_2.lg_p-12.flex.items-center
-          img(src="/alexis2.jpg")(v-in-vp).vp-y
+          img(src="/alexis2.jpg",v-in-vp).vp-y
         .lg_w-1_2.lg_p-12
           .flex.m-4(v-in-vp).vp-y
             .bg-seagreen.w-1.mr-4
-            .text-2xl.font-bold.mb-2.text-seagreen 10 fun facts about me
+            .text-2xl.font-bold.mb-2.text-seagreen 10 fun facts about Alexis
           ul.ml-4(v-in-vp).vp-y
             li I did my Master’s Thesis on teaching social skills to kiddos on the Autism Spectrum.
             li I specialize in helping families with kiddos who have emotional and developmental difficulties/differences.
