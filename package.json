@@ -31,7 +31,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/tailwindcss": "^1.1.0",
     "aeonian": "^1.1.8",
-    "aws-sdk": "^2.493.0",
+    "aws-sdk": "^2.814.0",
     "nuxt": "^2.0.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
